@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   def create
     @group = Group.find(params[:group_id])
     @post = Post.new(post_params)
-    @post.group = @gorup
+    @post.group = @group
     @post.user = current_user
 
     if @post.save
@@ -18,6 +18,7 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
 
   private
 
